@@ -80,6 +80,12 @@ var Teacher = /** @class */ (function (_super) {
     Teacher.prototype.greeting = function () {
         console.log("Hello! My name is " + this.name + ". i am " + this.age + " years old , study " + this.subject);
     };
+    Teacher.getInstance = function () {
+        if (Teacher.instance)
+            return Teacher.instance;
+        Teacher.instance = new Teacher("monster", 40, "japanese");
+        return Teacher.instance;
+    };
     return Teacher;
 }(Person));
 // const teacher = new Teacher("ossann", 39, "Math");
@@ -88,5 +94,5 @@ var Teacher = /** @class */ (function (_super) {
 // teacher.greeting();
 // console.log(Person.species);
 // console.log(Person.isAdult(38));
-var teacher = new Teacher("monster", 40, "japanese");
+var teacher = Teacher.getInstance();
 teacher.greeting();
