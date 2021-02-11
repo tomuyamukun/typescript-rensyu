@@ -32,8 +32,30 @@ function toUpperCase(x: string | number) {
 	}
 	return x;
 }
+interface TemFunc {
+	(x: string): number;
+	(x: number): number;
+}
 
-const upperHello = toUpperCase("hello");
+const upperHello: TemFunc = function (x: string | number) {
+	return 0;
+};
+upperHello("hi");
+upperHello(32);
+
+// interface FuncA {
+// 	(a: number, b: string): number;
+// 	(a: string, b: number): number;
+// }
+
+// interface FuncB {
+// 	(a: string): number;
+// }
+
+// let intersectionFunc: FuncA & FuncB;
+// intersectionFunc = function (a: number | string, b?: number | string) {
+// 	return 0;
+// };
 
 type NomadWorker = Engineer | Blogger;
 
@@ -113,3 +135,40 @@ console.log(downloadedData.user?.name?.first);
 const userData = downloadedData.user ?? "no-user";
 
 type id = DownloadedData["user" | "id"];
+
+let target = "hello";
+let source: "hello" = "hello";
+
+// 関数型のunion型
+interface FuncA {
+	(a: number): number;
+}
+
+interface FuncB {
+	(a: string): string;
+}
+
+let unionFunc: FuncA | FuncB;
+
+unionFunc = function (a: number) {
+	return 34;
+};
+
+// レストパラメーター
+// タプルとは[number, string, boolean]みたいなもの
+// function advancedFn(...args: [number, number, number, number, number, boolean?, ...number[]]){}の形でもおｋ
+function advancedFn(...args: number[]) {}
+advancedFn(0, 3, 3, 3, 33);
+
+// const アサーション
+let milk = "milk" as const;
+let drink = milk;
+
+const array = [10, 20] as const;
+const peter = {
+	name: "Peter",
+	age: 38,
+} as const;
+
+// typeof
+type PeterType = typeof peter;
