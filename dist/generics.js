@@ -4,24 +4,41 @@ function copy(value, key) {
     return value;
 }
 console.log(copy({ name: "hello", age: 38 }, "age"));
-var LightDatabase = /** @class */ (function () {
-    function LightDatabase() {
+class LightDatabase {
+    constructor() {
         this.data = [];
     }
-    LightDatabase.prototype.add = function (item) {
+    add(item) {
         this.data.push(item);
-    };
-    LightDatabase.prototype.remove = function (item) {
+    }
+    remove(item) {
         this.data.splice(this.data.indexOf(item), 1);
-    };
-    LightDatabase.prototype.get = function () {
+    }
+    get() {
         return this.data;
-    };
-    return LightDatabase;
-}());
-var stringLightDatabase = new LightDatabase();
+    }
+}
+const stringLightDatabase = new LightDatabase();
 stringLightDatabase.add("Apple");
 stringLightDatabase.add("Banana");
 stringLightDatabase.add("grape");
 stringLightDatabase.remove("Banana");
 console.log(stringLightDatabase.get());
+const TmpDatabase = {
+    id: 3,
+    data: [32],
+};
+const fetchData = new Promise((resolve) => {
+    setTimeout(() => {
+        resolve("hello");
+    }, 3000);
+});
+fetchData.then((data) => {
+    data.toUpperCase();
+});
+const vegetables = ["Tomato", "Broccoli", "Asparagus"];
+let tmp;
+// type MappedTypes = {
+// 	[P in "tomato" | "pumpkin"]: string;
+// };
+let tmp3;

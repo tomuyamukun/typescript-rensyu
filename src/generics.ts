@@ -37,3 +37,43 @@ const TmpDatabase: TmpDatabase<number> = {
 	id: 3,
 	data: [32],
 };
+
+interface Todo {
+	title: string;
+	text: string;
+}
+
+// utility型
+type TodoAble = Partial<Todo>;
+type ReadTodo = Readonly<Todo>;
+
+const fetchData: Promise<string> = new Promise((resolve) => {
+	setTimeout(() => {
+		resolve("hello");
+	}, 3000);
+});
+
+fetchData.then((data) => {
+	data.toUpperCase();
+});
+
+const vegetables: Array<string> = ["Tomato", "Broccoli", "Asparagus"];
+
+interface ResponseData<T = any> {
+	data: T;
+	status: number;
+}
+
+let tmp: ResponseData;
+
+interface Vegetables {
+	readonly tomato: string;
+	pumpkin: string;
+}
+// type MappedTypes = {
+// 	[P in "tomato" | "pumpkin"]: string;
+// };
+let tmp3: keyof Vegetables;
+type MappedTypes = {
+	-readonly [P in keyof Vegetables]-?: string;
+};

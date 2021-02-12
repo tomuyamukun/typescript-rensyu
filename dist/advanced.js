@@ -1,7 +1,7 @@
 "use strict";
 var _a, _b, _c;
 // interfaceなら→ interface EngineerBlogger extends Engineer, Blogger {}
-var quill = {
+const quill = {
     name: "Quill",
     role: "front-end",
     follower: 1000,
@@ -12,7 +12,7 @@ function toUpperCase(x) {
     }
     return x;
 }
-var upperHello = function (x) {
+const upperHello = function (x) {
     return 0;
 };
 upperHello("hi");
@@ -26,27 +26,25 @@ function describeProfile(nomadWorker) {
         console.log(nomadWorker.follower);
     }
 }
-var Dog = /** @class */ (function () {
-    function Dog() {
+class Dog {
+    constructor() {
         this.kind = "dog";
     }
-    Dog.prototype.speak = function () {
+    speak() {
         console.log("bow-bow");
-    };
-    return Dog;
-}());
-var Bird = /** @class */ (function () {
-    function Bird() {
+    }
+}
+class Bird {
+    constructor() {
         this.kind = "bird";
     }
-    Bird.prototype.speak = function () {
+    speak() {
         console.log("tweet-tweet");
-    };
-    Bird.prototype.fly = function () {
+    }
+    fly() {
         console.log("flutter");
-    };
-    return Bird;
-}());
+    }
+}
 function havePet(pet) {
     pet.speak();
     switch (pet.kind) {
@@ -59,40 +57,35 @@ function havePet(pet) {
 }
 havePet(new Bird());
 // React書くので前者が好ましいかな
-var input = document.getElementById("input");
+const input = document.getElementById("input");
 // const input = <HTMLInputElement>document.getElementById("input");
 input.value = "initial input value";
-var designer = {
+const designer = {
     name: "quill",
     role: "design",
 };
-var downloadedData = {
+const downloadedData = {
     id: 1,
 };
 console.log((_b = (_a = downloadedData.user) === null || _a === void 0 ? void 0 : _a.name) === null || _b === void 0 ? void 0 : _b.first);
 // downloadedDataが空のときno-userが入る
-var userData = (_c = downloadedData.user) !== null && _c !== void 0 ? _c : "no-user";
-var target = "hello";
-var source = "hello";
-var unionFunc;
+const userData = (_c = downloadedData.user) !== null && _c !== void 0 ? _c : "no-user";
+let target = "hello";
+let source = "hello";
+let unionFunc;
 unionFunc = function (a) {
     return 34;
 };
 // レストパラメーター
 // タプルとは[number, string, boolean]みたいなもの
 // function advancedFn(...args: [number, number, number, number, number, boolean?, ...number[]]){}の形でもおｋ
-function advancedFn() {
-    var args = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        args[_i] = arguments[_i];
-    }
-}
+function advancedFn(...args) { }
 advancedFn(0, 3, 3, 3, 33);
 // const アサーション
-var milk = "milk";
-var drink = milk;
-var array = [10, 20];
-var peter = {
+let milk = "milk";
+let drink = milk;
+const array = [10, 20];
+const peter = {
     name: "Peter",
     age: 38,
 };

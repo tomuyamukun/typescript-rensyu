@@ -1,3 +1,3 @@
 "use strict";
-var hello = "hello";
+let hello = "hello";
 console.log(hello.toUpperCase());

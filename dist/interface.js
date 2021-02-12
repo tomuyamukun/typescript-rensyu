@@ -1,6 +1,6 @@
 "use strict";
 // interfaceはobjectのみ使用
-var nameable = {
+const nameable = {
     name: "Doll",
     nickName: "majin",
 };
@@ -11,23 +11,22 @@ var nameable = {
 // 		console.log(message);
 // 	},
 // };
-var Developer = /** @class */ (function () {
-    function Developer(name, age, experience) {
+class Developer {
+    constructor(name, age, experience) {
         this.name = name;
         this.age = age;
         this.experience = experience;
     }
-    Developer.prototype.greeting = function (message) {
+    greeting(message) {
         console.log(message);
-    };
-    return Developer;
-}());
-var tmpDeveloper = {
+    }
+}
+const tmpDeveloper = {
     name: "quil",
     age: 38,
     experience: 3,
-    greeting: function (message) {
+    greeting(message) {
         console.log(message);
     },
 };
-var user = tmpDeveloper;
+const user = tmpDeveloper;

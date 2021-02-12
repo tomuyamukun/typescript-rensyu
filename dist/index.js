@@ -1,24 +1,24 @@
 "use strict";
 // true or false
-var hasValue = true;
-var count = 10;
-var float = 3.14;
-var negative = -0.12;
-var single = "hello";
-var double = "hello";
-var back = "hello";
-var person = {
+let hasValue = true;
+let count = 10;
+let float = 3.14;
+let negative = -0.12;
+let single = "hello";
+let double = "hello";
+let back = `hello`;
+const person = {
     name: {
         first: "Jack",
         last: "goer",
     },
     age: 21,
 };
-var fruits = ["Apple", "Banana", "Grape"];
+const fruits = ["Apple", "Banana", "Grape"];
 fruits.push("MELON");
-var fruit = fruits[0];
+const fruit = fruits[0];
 // tupleは[]の中に型を入れて定義する
-var book = ["business", 1500, false];
+const book = ["business", 1500, false];
 // pushで配列に追加することはできる
 book.push(21);
 // enumは列挙型、特定のまとまったグループのみを受け入れる
@@ -29,17 +29,17 @@ var CoffeeSize;
     CoffeeSize["GRANDE"] = "GRANDE";
     CoffeeSize["VENTI"] = "VENTI";
 })(CoffeeSize || (CoffeeSize = {}));
-var coffee = {
+const coffee = {
     hot: true,
     size: CoffeeSize.TALL,
 };
 console.log(CoffeeSize.SHORT);
-var unionType = 10;
-var unionTypes = [21, "hello"];
+let unionType = 10;
+let unionTypes = [21, "hello"];
 // Literal型特定の値しかもたないconstを使うと自ずとLiteralになる
-var apple = "apple";
-var clothSize = "large";
-var cloth = {
+const apple = "apple";
+let clothSize = "large";
+const cloth = {
     color: "white",
     size: "medium",
 };
@@ -51,17 +51,17 @@ function add(num1, num2) {
 function sayHello() {
     console.log("Hello!");
 }
-var anotherAdd = add;
-var doubleNumber = function (num) { return num * 2; };
+const anotherAdd = add;
+const doubleNumber = (num) => num * 2;
 function doubleAndHandle(num, cb) {
-    var doubleNum = cb(num * 2);
+    const doubleNum = cb(num * 2);
     console.log(num * 2);
 }
-doubleAndHandle(21, function (doubleNum) {
+doubleAndHandle(21, (doubleNum) => {
     return doubleNum;
 });
-var unknownInput;
-var anyInput;
+let unknownInput;
+let anyInput;
 unknownInput = "hello";
 unknownInput = 21;
 unknownInput = true;
