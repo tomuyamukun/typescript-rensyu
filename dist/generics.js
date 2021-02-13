@@ -1,4 +1,5 @@
 "use strict";
+// Tはname: stringの成約がある
 function copy(value, key) {
     value[key];
     return value;
@@ -42,3 +43,5 @@ let tmp;
 // 	[P in "tomato" | "pumpkin"]: string;
 // };
 let tmp3;
+let tmp4;
+let tmp5;

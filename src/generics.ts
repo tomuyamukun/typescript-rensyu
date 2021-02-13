@@ -1,3 +1,4 @@
+// Tはname: stringの成約がある
 function copy<T extends { name: string }, U extends keyof T>(
 	value: T,
 	key: U
@@ -77,3 +78,15 @@ let tmp3: keyof Vegetables;
 type MappedTypes = {
 	-readonly [P in keyof Vegetables]-?: string;
 };
+
+// conditinaltypes
+// tomatoがstringなのでnumber 違ったらboolean型になる
+type ConditionalTypes = "tomato" extends string ? number : boolean;
+
+type ConditionalTypesInfer = { tomato: "tomato" } extends { tomato: infer R }
+	? R
+	: boolean;
+
+type DistributiveConditionalTypes<T> = T extends "tomato" ? number : boolean;
+let tmp4: DistributiveConditionalTypes<"tomato" | "pumpkin">;
+let tmp5: NonNullable<string | null>;
